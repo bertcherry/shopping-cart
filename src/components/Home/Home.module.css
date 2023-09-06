@@ -1,0 +1,7 @@
+.container {
+    object-fit: contain;
+}
+
+img {
+    width: 100%;
+}
