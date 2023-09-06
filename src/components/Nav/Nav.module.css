@@ -1,0 +1,29 @@
+.banner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+.navList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.container {
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+}
+
+svg {
+    width: 100%;
+    color: var(--link);
+}
+
+@media (prefers-color-scheme: light) {
+    svg {
+        color: #4d6f4d;
+    }
+}

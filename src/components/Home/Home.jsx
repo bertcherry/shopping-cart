@@ -1,5 +1,5 @@
 import styles from "./Home.module.css";
-import Nav from "../Nav";
+import Nav from "../Nav/Nav";
 import clothing from "../../assets/Clothing.jpg";
 
 function Home() {
