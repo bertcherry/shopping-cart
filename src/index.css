@@ -4,9 +4,12 @@
   font-weight: 400;
 
   --link: #628d62;
+  --link-dark: #4d6f4d;
   --dark: #0b1d1d;
+  --dark-trans: #0b1d1ddd;
   --light: #f0e8e0;
-  --accent: #cc7f15;
+  --light-trans: #f0e8e0dd;
+  --accent: #e79118;
 
   color-scheme: light dark;
   color: var(--light);
@@ -31,7 +34,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
   min-width: 320px;
   max-width: 100vw;
   min-height: 100vh;
@@ -44,18 +47,24 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   color: var(--light);
-  background-color: var(--dark);
+  background-color: var(--link-dark);
   cursor: pointer;
   transition: border-color 0.25s;
 }
+button > a {
+  color: var(--light);
+}
 button:hover {
-  border-color: var(--link);
+  border-color: var(--light);
+}
+button > a:hover {
+  text-decoration: none;
 }
 button:focus,
 button:focus-visible {
@@ -68,9 +77,16 @@ button:focus-visible {
     background-color: var(--light);
   }
   a {
-    color: #4d6f4d;
+    color: var(--link-dark);
   }
   button {
+    color: var(--dark);
     background-color: var(--accent);
+  }
+  button > a {
+    color: var(--dark);
+  }
+  button:hover {
+    border-color: var(--dark);
   }
 }

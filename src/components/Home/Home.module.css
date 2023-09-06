@@ -1,7 +1,28 @@
+.hero {
+    position: relative;
+}
+
 .container {
     object-fit: contain;
 }
 
 img {
     width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--dark-trans);
+}
+
+@media (prefers-color-scheme: light) {
+    .overlay {
+        background-color: var(--light-trans);
+    }
 }
