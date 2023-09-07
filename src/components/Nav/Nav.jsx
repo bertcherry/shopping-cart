@@ -13,7 +13,7 @@ function Nav({cartData}) {
                 </ul>
             </nav>
             <button className={styles.btn}>
-                <Icon path={mdiCartOutline} size={1} />
+                <Icon path={mdiCartOutline} size={1} className={styles.svg} />
                 <div className={styles.cartItems}>{cartData.items}</div>
             </button>
         </div>

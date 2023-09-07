@@ -29,13 +29,13 @@
     color: var(--link);
 }
 
-svg {
+.svg {
     width: 100%;
     color: var(--link);
 }
 
 @media (prefers-color-scheme: light) {
-    svg {
+    .svg {
         color: var(--link-dark);
     }
     .cartItems {

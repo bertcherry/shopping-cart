@@ -8,12 +8,11 @@ function Home({cartData}) {
         <>
             <Nav cartData={cartData}/>
             <div className={styles.hero}>
-                <div className={styles.container}><img src={clothing} alt="A rack of clothes seen through a window"/></div>
+                <div className={styles.container}><img src={clothing} alt="A rack of clothes seen through a window" className={styles.img}/></div>
                 <div className={styles.overlay}>
                     <p>Couture and electronics for the modern life</p>
                     <button><Link to="shop">Shop</Link></button>
                 </div>
-                
             </div>
         </>
         
