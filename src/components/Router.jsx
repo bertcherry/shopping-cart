@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from './Home/Home';
 import Shop from './Shop/Shop';
+import Cart from './Cart/Cart';
 
 function Router() {
     const [cartData, setCartData] = useState({
@@ -25,27 +26,67 @@ function Router() {
             .finally(() => setLoading(false));
     }, []);
 
-    function addItem(itemId) {
+    function updateCart(itemId) {
         const quantity = Number(document.getElementById(itemId).value);
         console.log(quantity);
-        const shopItem = shopData.map(item => {
+        const shopItem = shopData.find(item => {
             if (item.id === itemId) {
-               return item; 
-        }});
+                return item;
+            }
+        });
+        setShopData(shopData.map(item => {
+            if (item.id === itemId) {
+                return {
+                    ...item,
+                    quantity: quantity,
+                } 
+            } else {
+                    return item;
+                }
+        }));
+        //update to return the correct number
         setCartData({
             items: Number(cartData.items) + quantity,
-            total: Number(cartData.total) + (quantity * shopItem.price),
+            total: Number(cartData.total) + quantity * shopItem.price,
         });
+    }
+
+    function countCart() {
+        let cartCount = 0;
+        if (!error && !loading) {
+            shopData.forEach(item => {
+                if (item.quantity > 0) {
+                    cartCount = cartCount + item.quantity;
+                }
+            });
+        }
+        return cartCount;
+    }
+
+    function totalCart() {
+        let cartTotal = 0;
+        if (!error && !loading) {
+            shopData.forEach(item => {
+                if (item.quantity > 0) {
+                    cartTotal = cartTotal + (item.price * item.quantity);
+                }
+            });
+        }
+        return cartTotal;
     }
 
     const router = createBrowserRouter([
         {
           path: "/",
-          element: <Home cartData={cartData}/>,
+          element: <Home cartCount={countCart()}/>,
         },
         {
           path: "shop",
-          element: <Shop shopData={shopData} error={error} loading={loading} cartData={cartData} addItem={addItem} />,
+          element: <Shop shopData={shopData} error={error} loading={loading} cartCount={countCart()} updateCart={updateCart} />,
+        }, 
+        {
+          path: "cart",
+          element: <Cart shopData={shopData} cartCount={countCart()} cartTotal={totalCart()} updateCart={updateCart}/>
         }
     ]);
 

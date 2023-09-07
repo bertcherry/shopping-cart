@@ -3,7 +3,7 @@ import Icon from '@mdi/react';
 import { mdiCartOutline } from '@mdi/js';
 import styles from './Nav.module.css';
 
-function Nav({cartData}) {
+function Nav({cartCount}) {
     return (
         <div className={styles.banner}>
             <nav> 
@@ -12,10 +12,12 @@ function Nav({cartData}) {
                     <li><Link to="/shop">Shop</Link></li>
                 </ul>
             </nav>
-            <button className={styles.btn}>
-                <Icon path={mdiCartOutline} size={1} className={styles.svg} />
-                <div className={styles.cartItems}>{cartData.items}</div>
-            </button>
+            <Link to="/cart">
+                <button className={styles.btn}>
+                    <Icon path={mdiCartOutline} size={1} className={styles.svg} />
+                    <div className={styles.cartItems}>{cartCount}</div>
+                </button>
+            </Link>
         </div>
     )
 }
