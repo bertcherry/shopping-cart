@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiCartOutline } from '@mdi/js';
 import styles from './Nav.module.css';
+import { cartData } from '../Cart';
 
 function Nav() {
     return (
@@ -14,6 +15,7 @@ function Nav() {
             </nav>
             <div className={styles.container}>
                 <Icon path={mdiCartOutline} size={1} />
+                <div className={styles.cartItems}>{cartData.items}</div>
             </div>
         </div>
     )
