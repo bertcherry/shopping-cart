@@ -3,10 +3,10 @@ import Nav from "../Nav/Nav";
 import clothing from "../../assets/Clothing.jpg";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home({cartData}) {
     return (
         <>
-            <Nav />
+            <Nav cartData={cartData}/>
             <div className={styles.hero}>
                 <div className={styles.container}><img src={clothing} alt="A rack of clothes seen through a window"/></div>
                 <div className={styles.overlay}>

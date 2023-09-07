@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiCartOutline } from '@mdi/js';
 import styles from './Nav.module.css';
-import { cartData } from '../Cart';
 
-function Nav() {
+function Nav({cartData}) {
     return (
         <div className={styles.banner}>
             <nav> 
