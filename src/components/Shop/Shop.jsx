@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Nav from '../Nav/Nav.jsx';
 import styles from './Shop.module.css';
 import Card from '../Card/Card.jsx';
