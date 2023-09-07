@@ -72,7 +72,8 @@ button > a:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid var(--light);
+  outline-offset: 3px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -92,5 +93,9 @@ button:focus-visible {
   }
   button:hover {
     border-color: var(--dark);
+  }
+  button:focus,
+  button:focus-visible {
+    outline-color: var(--dark);
   }
 }

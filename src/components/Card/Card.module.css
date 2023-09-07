@@ -6,7 +6,7 @@
     gap: .5em;
     background-color: #ffffff;
     color: var(--dark);
-    border: 2px solid var(--accent);
+    border: 3px solid var(--accent);
     border-radius: 4px;
     padding: 1rem;
 }
@@ -30,6 +30,10 @@
     background-color: inherit;
     color: inherit;
 }
+.input:focus,
+.input:focus-visible {
+    outline: 3px solid var(--link-dark);
+}
 
 .container {
     background-size: contain;
@@ -47,9 +51,17 @@
 .add:hover {
     border-color: var(--dark);
 }
+.add:focus, 
+.add:focus-visible {
+    outline-color: var(--link-dark);
+}
 
 @media (prefers-color-scheme: light) {
-    .card, input {
+    .card {
         border-color: var(--link-dark);
+    }
+    .input:focus,
+    .input:focus-visible {
+        outline-color: var(--link-dark);
     }
 }
