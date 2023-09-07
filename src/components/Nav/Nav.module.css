@@ -1,7 +1,7 @@
 .banner {
     display: flex;
     justify-content: space-between;
-    margin: 0px 10px;
+    margin: 10px;
 }
 
 .navList {
@@ -11,10 +11,22 @@
     gap: 20px;
 }
 
-.container {
+.btn {
     object-fit: cover;
     display: flex;
     align-items: center;
+    background-color: inherit;
+    padding: .1em .5em;
+}
+.btn:hover {
+    border-color: var(--link);
+}
+
+.cartItems {
+    position: relative;
+    top: -.5em;
+    font-size: 80%;
+    color: var(--link);
 }
 
 svg {
@@ -24,6 +36,12 @@ svg {
 
 @media (prefers-color-scheme: light) {
     svg {
-        color: #4d6f4d;
+        color: var(--link-dark);
+    }
+    .cartItems {
+        color: var(--link-dark);
+    }
+    .btn:hover {
+        border-color: var(--link-dark);
     }
 }

@@ -12,10 +12,10 @@ function Nav({cartData}) {
                     <li><Link to="shop">Shop</Link></li>
                 </ul>
             </nav>
-            <div className={styles.container}>
+            <button className={styles.btn}>
                 <Icon path={mdiCartOutline} size={1} />
                 <div className={styles.cartItems}>{cartData.items}</div>
-            </div>
+            </button>
         </div>
     )
 }
