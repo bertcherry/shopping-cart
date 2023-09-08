@@ -7,8 +7,12 @@ function Shop({shopData, error, loading, cartCount, updateCart}) {
         if (error) return <p>A network error occurred.</p>;
         if (loading) return <p>Loading...</p>;
         return shopData.map(item => {
+            let buttonName = 'Add';
+            if (item.quantity) {
+                buttonName = 'Update';
+            }
             return (
-                <Card key={item.id} id={item.id} title={item.title} price={item.price} imgsrc={item.image} quantity={item.quantity} updateCart={updateCart} buttonName="Add"/>
+                <Card key={item.id} id={item.id} title={item.title} price={item.price} imgsrc={item.image} quantity={item.quantity} updateCart={updateCart} buttonName={buttonName}/>
             )
         })
     }
