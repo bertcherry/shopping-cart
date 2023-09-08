@@ -17,8 +17,14 @@ function Cart({shopData, cartCount, cartTotal, updateCart}) {
         } else {
             return (
                 <>
-                    {cartRows}
-                    <div>Total: ${cartTotal.toFixed(2)}</div>
+                    <div className={styles.rows}>
+                        {cartRows}
+                    </div>
+                    <div className={styles.checkout}>
+                        <div className={styles.total}>Total: ${cartTotal.toFixed(2)}</div>
+                        <button disabled>Checkout</button>
+                    </div>
+                    
                 </>
             );
         }

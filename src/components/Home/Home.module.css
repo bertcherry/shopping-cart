@@ -21,6 +21,10 @@
     background-color: var(--dark-trans);
 }
 
+.btn {
+    padding: 0.6em 1.2em;
+}
+
 @media (prefers-color-scheme: light) {
     .overlay {
         background-color: var(--light-trans);
