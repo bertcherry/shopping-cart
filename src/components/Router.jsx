@@ -5,10 +5,6 @@ import Shop from './Shop/Shop';
 import Cart from './Cart/Cart';
 
 function Router() {
-    const [cartData, setCartData] = useState({
-        items: null,
-        total: 0,
-    });
     const [shopData, setShopData] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -28,12 +24,6 @@ function Router() {
 
     function updateCart(itemId) {
         const quantity = Number(document.getElementById(itemId).value);
-        console.log(quantity);
-        const shopItem = shopData.find(item => {
-            if (item.id === itemId) {
-                return item;
-            }
-        });
         setShopData(shopData.map(item => {
             if (item.id === itemId) {
                 return {
@@ -44,11 +34,6 @@ function Router() {
                     return item;
                 }
         }));
-        //update to return the correct number
-        setCartData({
-            items: Number(cartData.items) + quantity,
-            total: Number(cartData.total) + quantity * shopItem.price,
-        });
     }
 
     function countCart() {
