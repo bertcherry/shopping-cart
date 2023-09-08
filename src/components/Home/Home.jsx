@@ -11,7 +11,7 @@ function Home({cartData}) {
                 <div className={styles.container}><img src={clothing} alt="A rack of clothes seen through a window" className={styles.img}/></div>
                 <div className={styles.overlay}>
                     <p>Couture and electronics for the modern life</p>
-                    <button className={styles.btn}><Link to="/shop">Shop</Link></button>
+                    <Link to="/shop" className={styles.btn}>Shop</Link>
                 </div>
             </div>
         </>

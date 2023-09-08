@@ -17,9 +17,13 @@
     align-items: center;
     background-color: inherit;
     padding: .1em .5em;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: border-color 0.25s;
 }
 .btn:hover {
     border-color: var(--link);
+    text-decoration: none;
 }
 
 .cartItems {

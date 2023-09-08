@@ -65,14 +65,8 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button > a {
-  color: var(--light);
-}
 button:hover {
   border-color: var(--light);
-}
-button > a:hover {
-  text-decoration: none;
 }
 button:focus,
 button:focus-visible {
@@ -95,9 +89,6 @@ button:disabled {
   button {
     color: var(--dark);
     background-color: var(--accent);
-  }
-  button > a {
-    color: var(--dark);
   }
   button:hover {
     border-color: var(--dark);

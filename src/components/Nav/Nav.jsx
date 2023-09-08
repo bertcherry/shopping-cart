@@ -13,11 +13,9 @@ function Nav({cartCount}) {
                     <li><Link to="/shop">Shop</Link></li>
                 </ul>
             </nav>
-            <Link to="/cart">
-                <button className={styles.btn}>
-                    <Icon path={mdiCartOutline} size={1} className={styles.svg} />
-                    <div className={styles.cartItems}>{cartDisplay}</div>
-                </button>
+            <Link to="/cart" className={styles.btn}>
+                <Icon path={mdiCartOutline} size={1} className={styles.svg} />
+                <div className={styles.cartItems}>{cartDisplay}</div>
             </Link>
         </div>
     )
