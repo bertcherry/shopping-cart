@@ -17,7 +17,8 @@
 
 .interactive {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
     align-items: center;
     width: 100%;
 }
@@ -45,19 +46,12 @@
     object-fit: contain;
 }
 
-.btn {
-    padding: 0.1em .6em;
-}
 .btn:hover {
     border-color: var(--dark);
 }
 .btn:focus, 
 .btn:focus-visible {
     outline-color: var(--link-dark);
-}
-.btn:disabled {
-    opacity: .7;
-    pointer-events: none;
 }
 
 @media (prefers-color-scheme: light) {
