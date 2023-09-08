@@ -7,7 +7,7 @@ import Cart from './Cart/Cart';
 function Router() {
     const [cartData, setCartData] = useState({
         items: null,
-        total: null,
+        total: 0,
     });
     const [shopData, setShopData] = useState([]);
     const [error, setError] = useState(null);
